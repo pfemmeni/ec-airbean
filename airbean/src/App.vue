@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navigation v-show="$store.state.showNav"> </Navigation>
-    <router-view />
+    <router-view v-show="!$store.state.showNav" />
   </div>
 </template>
 
@@ -11,6 +11,9 @@ export default {
   components: { Navigation },
   data() {
     return {};
+  },
+  created() {
+    this.$store.commit("getName");
   },
 };
 </script>

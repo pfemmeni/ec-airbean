@@ -1,6 +1,6 @@
 <template>
   <div class="background ">
-    <header>
+    <header class="headers">
       <img
         src="@/assets/graphics/navicon.svg"
         class="nav-btn"
@@ -12,8 +12,8 @@
     </header>
     <CartModal v-if="$store.state.showModal"></CartModal>
 
-    <h1>Meny</h1>
-    <p v-if="loading">Loading</p>
+    <h1 class="ha par">Meny</h1>
+    <p class="par" v-if="loading">Loading</p>
     <MenyItem
       v-else
       v-for="item in menuItems"
@@ -21,7 +21,7 @@
       :item="item"
       @click="$store.dispatch('addToCart', item.id)"
     ></MenyItem>
-    <footer></footer>
+    <img class="foot" src="../assets/graphics/graphics-footer.svg" alt="" />
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
   components: { MenyItem, CartModal },
   computed: {
     menuItems() {
-      return this.$store.state.menuItems[0];
+      return this.$store.state.menuItems;
     },
   },
 
@@ -56,26 +56,39 @@ export default {
   background-color: #f3e3e3;
   height: 100vh;
   margin-bottom: 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
+.ha {
   font-size: 40px;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-h1,
-p {
+
+.par {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-header {
+.headers {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
   padding: 0;
+  background-image: url("../assets/graphics/graphics-header.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.foot {
+  width: 100%;
+  background-image: url("../assets/graphics/graphics-footer.svg");
+  margin-bottom: 0;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  margin-top: 140px;
+  background-size: contain;
 }
 .cart-btn {
   font-family: Arial, Helvetica, sans-serif;

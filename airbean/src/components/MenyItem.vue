@@ -23,6 +23,10 @@ export default {
   display: flex;
   flex-direction: row;
   max-height: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -38,12 +42,14 @@ export default {
   flex-direction: column;
   margin-bottom: 10px;
   padding-bottom: 10px;
+  padding-top: 0px;
   justify-content: center;
   border-bottom: 1px solid #aaa;
 }
 .title {
   font-size: 25px;
   font-weight: 600;
+  margin-bottom: 0px;
 }
 .price {
   font-size: 25px;

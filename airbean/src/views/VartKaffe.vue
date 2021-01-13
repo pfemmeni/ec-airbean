@@ -1,6 +1,6 @@
 <template>
   <div class="backgroundVK">
-    <header>
+    <header class="tops">
       <img
         src="@/assets/graphics/navicon.svg"
         class="x-btn"
@@ -35,10 +35,13 @@
       </p>
     </div>
 
-    <footer>
-      <img src="../assets/graphics/eva-cortado.jpg" />
-      <h2>Eva Cortado</h2>
-      <span>VD & Grundare</span>
+    <footer class="bens">
+      <img
+        class="bens-item bens-pic"
+        src="../assets/graphics/eva-cortado.jpg"
+      />
+      <h2 class="bens-item">Eva Cortado</h2>
+      <span class="bens-item">VD & Grundare</span>
     </footer>
   </div>
 </template>
@@ -56,7 +59,7 @@ export default {};
   margin-bottom: 0;
 }
 
-header {
+.tops {
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -64,7 +67,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-footer {
+.bens {
   width: 100%;
   background-image: url("../assets/graphics/graphics-footer.svg");
   margin-bottom: 0;
@@ -73,13 +76,10 @@ footer {
   background-size: contain;
   justify-content: center;
 }
-footer img {
+.bens-pic {
   border-radius: 50px;
 }
-
-footer img,
-span,
-h2 {
+.bens-item {
   justify-content: center;
   margin: 3px;
 }
